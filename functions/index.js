@@ -60,7 +60,7 @@ app.use((req, res, next) => {
 //Rutas
 app.use(require('./routes/index'));
 app.use(require('./routes/users'));
-
+app.use(require('./routes/menu'));
 
 
 // app.get('/timestamp', (req, res) => {
