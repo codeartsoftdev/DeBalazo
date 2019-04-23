@@ -12,96 +12,194 @@
         <form class="form-horizontal" method="post" action="/menu">
             <div class="form-group ">
 
-                
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card bg-light text-dark">
-                                <div class="card-body" style="padding:5px;">
 
+                <div class="row">
+                    <div class="col-md-4">
+
+
+                        <div class="card bg-light text-dark">
+                            <div class="card-body" style="padding:5px;">
+                                <div class="row">
                                     <img id="profile-img-tag" name="profile-img-tag"
-                                        src="https://i.ibb.co/jb2RzWh/DeBalazo.png" alt="imgAlt" style="display: block; margin-left: auto; margin-right: auto; width: 100%;" />
-
-{{!-- <br><br> --}}
+                                        src="https://i.ibb.co/jb2RzWh/DeBalazo.png" alt="imgAlt"
+                                        style="display: block; margin-left: auto; margin-right: auto; width: 100%;" />
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <label for="profile-img" class="control-label">
+                                        Foto/Imagen
+                                        <span style="color: red;">*</span>
+                                    </label>
+                                    <input type="file" id="profile-img" name="profile-img" data-toggle="tooltip"
+                                        title="Selecciona la imagen correspondiente al producto a registrar"
+                                        class="input-file" accept="image/*" required>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-8">
-                            <div class="card bg-light text-dark">
-                                <div class="card-body">
 
-                                    <div class="row">
-                                        <div class="col-md-6" style="text-align:center;">
-                                            <label for="Titulo" class="control-label">
-                                                Titulo
-                                                <span style="color: red;">*</span>
-                                            </label>
-                                            <input type="text" id="Titulo" name="Titulo"
-                                                placeholder="Ingresa nombre del platillo/bebida" data-toggle="tooltip"
-                                                title="Ingresa nombre del platillo/bebida"
-                                                class="form-control text-sm-center mw-100"
-                                                style="margin:0px auto; display:block;" autocomplete="off" required />
-                                        </div>
 
-                                        <div class="col-md-6" style="text-align:center;">
-                                            <label for="Precio" class="control-label">
-                                                Precio
-                                                <span style="color: red;">*</span>
-                                            </label>
-                                            <input type="text" id="Precio" name="Precio" placeholder="$0.00"
+                    </div>
+
+
+                    <div class="col-md-8">
+                        <div class="card bg-light text-dark">
+                            <div class="card-body">
+
+                                <div class="row">
+                                    <div class="col-md-6" style="text-align:center;">
+                                        <label for="Titulo" class="control-label">
+                                            Titulo
+                                            <span style="color: red;">*</span>
+                                        </label>
+                                        <input type="text" id="Titulo" name="Titulo"
+                                            placeholder="Ingresa nombre del platillo/bebida" data-toggle="tooltip"
+                                            title="Ingresa nombre del platillo/bebida"
+                                            class="form-control text-sm-center mw-100"
+                                            style="margin:0px auto; display:block;" autocomplete="off" required />
+                                    </div>
+
+                                    <div class="col-md-6" style="text-align:center;">
+                                        <label for="Precio" class="control-label">
+                                            Precio
+                                            <span style="color: red;">*</span>
+                                        </label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div>
+                                            <input type="text" id="Precio" name="Precio" placeholder="0.00"
                                                 data-toggle="tooltip" title="Ingresa precio del producto"
                                                 class="form-control text-sm-center mw-100"
                                                 style="margin:0px auto; display:block;" autocomplete="off" required />
                                         </div>
                                     </div>
+                                </div>
 
-                                    <br>
+                                <br>
 
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label for="Descripcion" class="control-label">
-                                                Descripción
-                                                <span style="color: red;">*</span>
-                                            </label>
-                                            <textarea class="form-control mw-100" rows="4" id="Descripcion"
-                                                name="Descripcion"
-                                                placeholder="Agrega una breve descripción del producto (ingredientes, preparación, contenido, etc.)"
+                                {{!-- ** ACTIVO: MUESTRA COLLAPSABLE DE OPCIONES CH, M, G ** --}}
+                                <div class="row">
+                                    <div class="col-md-12" style="text-align:center;">
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="DifPorc"
+                                                name="DifPorc" onclick="EnableDiv();">
+                                            <label class="custom-control-label" for="DifPorc">¿Diferentes
+                                                porciones?</label>
+                                        </div>
+                                    </div>
+                                      <br>
+                                </div>
+
+                             
+
+                                <div class="row">
+                                     
+
+                                    <div class="col-md-4" id="Ch" style="text-align:center; display:none;">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="chkCh" name="chkCh" onclick="EnableDisableChico(this);">
+                                            <label class="custom-control-label" for="chkCh">Chico</label>
+                                        </div>
+                                        <div class="input-group mt-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div>
+                                            <input type="text" id="txtCh" name="txtCh" placeholder="0.00"
+                                                data-toggle="tooltip" title="Ingresa precio del producto"
+                                                class="form-control text-sm-center mw-100"
                                                 style="margin:0px auto; display:block;" autocomplete="off"
-                                                style="width:100%;" required></textarea>
+                                                disabled="disabled" />
                                         </div>
                                     </div>
 
+                                    <div class="col-md-4" id="Md" style="text-align:center; display:none;">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="chkMed"
+                                                name="chkMed" onclick="EnableDisableMediano(this);">
+                                            <label class="custom-control-label" for="chkMed">Mediano</label>
+                                        </div>
+                                        <div class="input-group mt-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div>
+                                            <input type="text" id="txtMed" name="txtMed" placeholder="0.00"
+                                                data-toggle="tooltip" title="Ingresa precio del producto"
+                                                class="form-control text-sm-center mw-100"
+                                                style="margin:0px auto; display:block;" autocomplete="off"
+                                                disabled="disabled" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4" id="Gd" style="text-align:center; display:none;">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="chkGde"
+                                                name="chkGde" onclick="EnableDisableGrande(this);">
+                                            <label class="custom-control-label" for="chkGde">Grande</label>
+                                        </div>
+                                        <div class="input-group mt-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div>
+                                            <input type="text" id="txtGde" name="txtGde" placeholder="0.00"
+                                                data-toggle="tooltip" title="Ingresa precio del producto"
+                                                class="form-control text-sm-center mw-100"
+                                                style="margin:0px auto; display:block;" autocomplete="off"
+                                                disabled="disabled" />
+                                        </div>
+                                    </div>
+
+                                    
+
+                                </div>                                
+
+                                <div class="row">
+<br>
+                                    <div class="col-md-12">
+                                        <label for="Descripcion" class="control-label">
+                                            Descripción
+                                            <span style="color: red;">*</span>
+                                        </label>
+                                        <textarea class="form-control mw-100" rows="4" id="Descripcion"
+                                            name="Descripcion"
+                                            placeholder="Agrega una breve descripción del producto (ingredientes, preparación, contenido, etc.)"
+                                            style="margin:0px auto; display:block;" autocomplete="off"
+                                            style="width:100%;" required></textarea>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
-                    <br>
+                </div>
+                <br>
 
-                    <div class="row">
-                        <div class="col-md-5">
-                            <label for="profile-img" class="control-label">
-                                Foto/Imagen
-                                <span style="color: red;">*</span>
-                            </label>
-                            <input type="file" id="profile-img" name="profile-img" data-toggle="tooltip"
-                                title="Selecciona la imagen correspondiente al producto a registrar" class="input-file"
-                                accept="image/*" required>
-                        </div>
-
-                        <div class="col-md-5">
-                        </div>
-
-                        <div class="col-md-2">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block" id="btnAgregar"
-                                name="btnAgregar">
-                                <span class="fa fa-floppy-o">
-                                    Agregar
-                                </span>
-                            </button>
-                        </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        {{!-- <label for="profile-img" class="control-label">
+                            Foto/Imagen
+                            <span style="color: red;">*</span>
+                        </label>
+                        <input type="file" id="profile-img" name="profile-img" data-toggle="tooltip"
+                            title="Selecciona la imagen correspondiente al producto a registrar" class="input-file"
+                            accept="image/*" required> --}}
                     </div>
 
-              
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="btnAgregar"
+                            name="btnAgregar">
+                            <span class="fa fa-floppy-o">
+                                Agregar
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="col-md-5">
+
+                    </div>
+                </div>
+
+
 
             </div>
         </form>
@@ -114,17 +212,18 @@
 {{!-- =================================== --}}
 
 
-<script type="text/javascript">
+{{!-- <script type="text/javascript"> --}}
 
-    $(document).ready(function () {
+<script>
 
-        $('[data-toggle="tooltip"]').tooltip(); 
-});
+   $("#DivRow").hide();
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+   
 
     if ({{ msg.success }})
     {
-
-
         swal({
             title: '{{msg.title}}',
             //text: 'Fue dado de alta exitosamente',
@@ -137,7 +236,7 @@
 
 </script>
 
-<script type="text/javascript">
+<script>
 
     function readURL(input) {
         if (input.files && input.files[0]) {
@@ -152,9 +251,60 @@
             }
             reader.readAsDataURL(input.files[0]);
         }
-    }
-    $("#profile-img").change(function () {
+    };
+
+    $('#profile-img').change(function () {
         readURL(this);
     });
+
+
+function EnableDiv() {
+        var Ch = document.getElementById("Ch");
+        var Md = document.getElementById("Md");
+        var Gd = document.getElementById("Gd");
+
+  if (Ch.style.display === "none") {
+    Ch.style.display = "block";
+  } else {
+    Ch.style.display = "none";
+  }
+
+  if (Md.style.display === "none") {
+    Md.style.display = "block";
+  } else {
+    Md.style.display = "none";
+  }
+
+    if (Gd.style.display === "none") {
+    Gd.style.display = "block";
+  } else {
+    Gd.style.display = "none";
+  }
+
+    };
+
+function EnableDisableChico(chkCh) {
+        var txtCh = document.getElementById("txtCh");
+        txtCh.disabled = chkCh.checked ? false : true;
+        if (!txtCh.disabled) {
+            txtCh.focus();
+        }
+    };
+
+    function EnableDisableMediano(chkMed) {
+        var txtMed = document.getElementById("txtMed");
+        txtMed.disabled = chkMed.checked ? false : true;
+        if (!txtMed.disabled) {
+            txtMed.focus();
+        }
+    };
+
+    function EnableDisableGrande(chkGde) {
+        var txtGde = document.getElementById("txtGde");
+        txtGde.disabled = chkGde.checked ? false : true;
+        if (!txtGde.disabled) {
+            txtGde.focus();
+        }
+    };
 
 </script>
