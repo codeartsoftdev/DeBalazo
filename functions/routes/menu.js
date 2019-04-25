@@ -1,8 +1,12 @@
 const router = require('express').Router();
 const db = require('firebase-admin').firestore();
 
-router.get('/menu', (req,res) => {
+router.get('/menu/a', (req,res) => {
     res.render('Menu/AltaMenu');
+});
+
+router.get('/menu/l', (req,res) => {
+    res.render('Menu/ListaMenu');
 });
 
 
