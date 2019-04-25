@@ -15,15 +15,23 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/users/sigin">Iniciar sessión</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/users/sigup">Regístrate</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/salir">Salir</a>
-                </li>
+                {{#if user}}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/salir">Salir222</a>
+                    </li>
+                {{else}}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/users/sigin">Iniciar sessión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/sigup">Regístrate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/salir">Salir</a>
+                    </li>
+                {{/if}}
+                
+                
             </ul>
         </div>
     </div>

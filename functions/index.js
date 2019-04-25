@@ -1,13 +1,14 @@
+const express = require('express');
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const firebase = require("firebase");
-const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const methosOverride= require('method-override');
 const session = require('express-session');
-const flash = require('connect-flash');
 const passport = require('passport');
+const flash = require('connect-flash');
+
 
 
 //Inicializadores
@@ -45,6 +46,7 @@ app.use(session({   //autenticar un usuario y mantenerlo en la sesion
     resave:true,
     saveUninitialized: true
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -53,73 +55,17 @@ app.use(flash());
 //Variables Globales
 app.use((req, res, next) => {
     res.locals.error = req.flash('error');
+    res.locals.user = req.user || null;
     next();
 });
-
-
 
 
 //Rutas
 app.use(require('./routes/index'));
 app.use(require('./routes/users'));
 app.use(require('./routes/menu'));
+app.use(require('./routes/datos'));
 
-
-// app.get('/timestamp', (req, res) => {
-//     res.send(`${Date.now()}`);
-// });
-
-
-// app.get('/agregar', (req, res) => {
-//     var docRef = db.collection('users').doc('alovelace');
-
-//     var setAda = docRef.set({
-//         first: 'Carlos',
-//         last: 'Emmanuel',
-//         born: 1989
-//     });
-
-//     if(setAda)
-//     {
-//         res.send('Guardado');
-//     } else {
-//         res.send('No guardo')
-//     }
-// });
-
-// app.get('/insertar', (req, res) => {
-//     db.collection("users").add({
-//         first: "Jorge",
-//         last: "Cepeda",
-//         born: 1990
-//     })
-//     .then(function(docRef) {
-//         res.send(docRef.id);
-//     })
-//     .catch(function(error) {
-//         res.send(error);
-//     });
-// });
-
-// app.get('/iniciar', (req, res) => {
-//     firebase.auth().signInWithEmailAndPassword('salvador.hernandez@tecnoaplicada.com', '123456').then(function(user){
-//         res.send(user)
-//     }).catch(function(error) {
-//         // Handle Errors here.
-//         var errorCode = error.code;
-//         var errorMessage = error.message;
-//         res.send(error)
-//         // ...
-//       });
-// });
-
-// app.get('/salir', (req, res) => {
-//     firebase.auth().signOut().then(function() {
-//         res.send('deslogueado')
-//       }).catch(function(error) {
-//         res.send(error)
-//       });
-// })
 
 //Archivos estaticos
 app.use(express.static(path.join(__dirname, '../public')));
