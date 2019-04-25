@@ -5,8 +5,8 @@ const firebase = require('firebase');
 passport.use(new localStrategy({
     usernameField: 'email'
 }, (email, password, done ) => {
-
-    firebase.auth().signInWithEmailAndPassword(email, password).then(function(user){
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function(User){
+       const user = User.user;
         return done(null, user);
     }).catch(function(){
         return done(null, false, {error: 'Usuario o contraseña incorrecta'});
@@ -15,14 +15,5 @@ passport.use(new localStrategy({
 
 
 passport.serializeUser((user, done) =>{
-    done(null, user.passport);
+    done(null, user.uid);
 });
-
-passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => {
-        done(err, user);
-    })
-});
-
-
-
