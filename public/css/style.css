@@ -1,0 +1,78 @@
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .table>tbody>tr>td {
+        vertical-align: middle;
+        text-align: justify;
+    }
+
+    .custom-file-upload {
+        color: antiquewhite;
+
+        background: linear-gradient(81deg, #f46503, #001ea0, #f46503, #001ea0);
+        background-size: 800% 800%;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+
+        -webkit-animation: DB 6s ease infinite;
+        -moz-animation: DB 6s ease infinite;
+        animation: DB 6s ease infinite;
+    }
+
+    @-webkit-keyframes DB {
+        0% {
+            background-position: 97% 0%
+        }
+
+        50% {
+            background-position: 4% 100%
+        }
+
+        100% {
+            background-position: 97% 0%
+        }
+    }
+
+    @-moz-keyframes DB {
+        0% {
+            background-position: 97% 0%
+        }
+
+        50% {
+            background-position: 4% 100%
+        }
+
+        100% {
+            background-position: 97% 0%
+        }
+    }
+
+    @keyframes DB {
+        0% {
+            background-position: 97% 0%
+        }
+
+        50% {
+            background-position: 4% 100%
+        }
+
+        100% {
+            background-position: 97% 0%
+        }
+    }
+
+.dbbg::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('/img/De-Balazo-Background.png');
+    background-repeat: repeat;
+}

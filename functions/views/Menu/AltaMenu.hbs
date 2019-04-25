@@ -1,4 +1,5 @@
-<div class="container-fluid">
+
+<div class="container-fluid" style="margin-top:-10px;">
     <div class="container">
 
         <div>
@@ -12,96 +13,177 @@
         <form class="form-horizontal" method="post" action="/menu">
             <div class="form-group ">
 
-                
-                    <div class="row">
-                        <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <div class="row justify-content-center">
+
                             <div class="card bg-light text-dark">
                                 <div class="card-body" style="padding:5px;">
-
                                     <img id="profile-img-tag" name="profile-img-tag"
-                                        src="https://i.ibb.co/jb2RzWh/DeBalazo.png" alt="imgAlt" style="display: block; margin-left: auto; margin-right: auto; width: 100%;" />
-
-{{!-- <br><br> --}}
+                                        src="/img/DeBalazo.png" alt="imgAlt"
+                                        style="display: block; margin-left: auto; margin-right: auto; width: 100%;" />
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-8">
-                            <div class="card bg-light text-dark">
-                                <div class="card-body">
-
-                                    <div class="row">
-                                        <div class="col-md-6" style="text-align:center;">
-                                            <label for="Titulo" class="control-label">
-                                                Titulo
-                                                <span style="color: red;">*</span>
-                                            </label>
-                                            <input type="text" id="Titulo" name="Titulo"
-                                                placeholder="Ingresa nombre del platillo/bebida" data-toggle="tooltip"
-                                                title="Ingresa nombre del platillo/bebida"
-                                                class="form-control text-sm-center mw-100"
-                                                style="margin:0px auto; display:block;" autocomplete="off" required />
-                                        </div>
-
-                                        <div class="col-md-6" style="text-align:center;">
-                                            <label for="Precio" class="control-label">
-                                                Precio
-                                                <span style="color: red;">*</span>
-                                            </label>
-                                            <input type="text" id="Precio" name="Precio" placeholder="$0.00"
-                                                data-toggle="tooltip" title="Ingresa precio del producto"
-                                                class="form-control text-sm-center mw-100"
-                                                style="margin:0px auto; display:block;" autocomplete="off" required />
-                                        </div>
-                                    </div>
-
-                                    <br>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label for="Descripcion" class="control-label">
-                                                Descripción
-                                                <span style="color: red;">*</span>
-                                            </label>
-                                            <textarea class="form-control mw-100" rows="4" id="Descripcion"
-                                                name="Descripcion"
-                                                placeholder="Agrega una breve descripción del producto (ingredientes, preparación, contenido, etc.)"
-                                                style="margin:0px auto; display:block;" autocomplete="off"
-                                                style="width:100%;" required></textarea>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-md-5">
-                            <label for="profile-img" class="control-label">
-                                Foto/Imagen
+                        <div class="row justify-content-center mt-2">
+                            <label for="profile-img" class="control-label custom-file-upload">
+                                <i class="fa fa-upload fa-lg"></i> Elegir foto/imagen
                                 <span style="color: red;">*</span>
                             </label>
                             <input type="file" id="profile-img" name="profile-img" data-toggle="tooltip"
-                                title="Selecciona la imagen correspondiente al producto a registrar" class="input-file"
-                                accept="image/*" required>
-                        </div>
-
-                        <div class="col-md-5">
-                        </div>
-
-                        <div class="col-md-2">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block" id="btnAgregar"
-                                name="btnAgregar">
-                                <span class="fa fa-floppy-o">
-                                    Agregar
-                                </span>
-                            </button>
+                                data-placement="bottom"
+                                title="Selecciona la imagen correspondiente al producto a registrar" accept="image/*"
+                                required>
                         </div>
                     </div>
 
-              
+
+                    <div class="col-md-8">
+                        <div class="card bg-light text-dark">
+                            <div class="card-body">
+
+                                <div class="row">
+                                    <div class="col-md-6" style="text-align:center;">
+                                        <label for="Titulo" class="control-label">
+                                            Titulo
+                                            <span style="color: red;">*</span>
+                                        </label>
+                                        <input type="text" id="Titulo" name="Titulo"
+                                            placeholder="Ingresa nombre del platillo/bebida" data-toggle="tooltip"
+                                            data-placement="bottom" title="Ingresa nombre del platillo/bebida"
+                                            class="form-control text-sm-center mw-100"
+                                            style="margin:0px auto; display:block;" autocomplete="off" required />
+                                    </div>
+
+                                    <div class="col-md-6" style="text-align:center;">
+                                        <label for="Precio" class="control-label">
+                                            Precio
+                                            <span style="color: red;">*</span>
+                                        </label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div>
+                                            <input type="text" id="Precio" name="Precio" placeholder="$0.00"
+                                                pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
+                                                data-type="currency" data-toggle="tooltip" data-placement="bottom"
+                                                title="Ingresa precio del producto"
+                                                class="form-control text-sm-center mw-100"
+                                                style="margin:0px auto; display:block;" autocomplete="off" required />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{!-- <br> --}}
+
+                                {{!-- ** ACTIVO: MUESTRA COLLAPSABLE DE OPCIONES CH, M, G ** --}}
+                                <div class="row pb-2">
+                                    <div class="col-md-12" style="text-align:center;">
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="DifPorc"
+                                                name="DifPorc" onclick="EnableDiv();">
+                                            <label class="custom-control-label" for="DifPorc">¿Diferentes
+                                                porciones?</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" id="DivRow">
+
+                                    <div class="col-md-4" id="Ch" style="text-align:center;">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input chkDifPorc" id="chkCh"
+                                                name="chkCh" onclick="EnableDisableChico(this);">
+                                            <label class="custom-control-label" for="chkCh">Chico</label>
+                                        </div>
+                                        <div class="input-group mt-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div>
+                                            <input type="text" id="txtCh" name="txtCh" placeholder="$0.00"
+                                                pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency"
+                                                class="form-control text-sm-center mw-100 txtDifPorc"
+                                                style="margin:0px auto; display:block;" autocomplete="off"
+                                                disabled="disabled" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4" id="Md" style="text-align:center;">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input chkDifPorc" id="chkMed"
+                                                name="chkMed" onclick="EnableDisableMediano(this);">
+                                            <label class="custom-control-label" for="chkMed">Mediano</label>
+                                        </div>
+                                        <div class="input-group mt-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div>
+                                            <input type="text" id="txtMed" name="txtMed" placeholder="$0.00"
+                                                pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency"
+                                                class="form-control text-sm-center mw-100 txtDifPorc"
+                                                style="margin:0px auto; display:block;" autocomplete="off"
+                                                disabled="disabled" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4" id="Gd" style="text-align:center;">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input chkDifPorc" id="chkGde"
+                                                name="chkGde" onclick="EnableDisableGrande(this);">
+                                            <label class="custom-control-label" for="chkGde">Grande</label>
+                                        </div>
+                                        <div class="input-group mt-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div>
+                                            <input type="text" id="txtGde" name="txtGde" placeholder="$0.00"
+                                                pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency"
+                                                class="form-control text-sm-center mw-100 txtDifPorc"
+                                                style="margin:0px auto; display:block;" autocomplete="off"
+                                                disabled="disabled" />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row mt-2"> {{!-- ** DESCRIPCION ** --}}
+                                    <div class="col-md-12">
+                                        <label for="Descripcion" class="control-label">
+                                            Descripción
+                                            <span style="color: red;">*</span>
+                                        </label>
+                                        <textarea class="form-control mw-100" rows="3" id="Descripcion"
+                                            name="Descripcion"
+                                            placeholder="Agrega una breve descripción del producto (ingredientes, preparación, contenido, etc.)"
+                                            style="margin:0px auto; display:block;" autocomplete="off"
+                                            style="width:100%;" required></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-5">
+                    </div>
+
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-outline-info btn-lg btn-block" id="btnAgregar"
+                            name="btnAgregar">
+                            <span class="fa fa-floppy-o">
+                                Agregar
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="col-md-5">
+                    </div>
+                </div>
 
             </div>
         </form>
@@ -110,51 +192,5 @@
 </div>
 
 
-
 {{!-- =================================== --}}
 
-
-<script type="text/javascript">
-
-    $(document).ready(function () {
-
-        $('[data-toggle="tooltip"]').tooltip(); 
-});
-
-    if ({{ msg.success }})
-    {
-
-
-        swal({
-            title: '{{msg.title}}',
-            //text: 'Fue dado de alta exitosamente',
-            text: 'Agregado correctamente',
-            showConfirmButton: false,
-            timer: 2600,
-            html: true
-        }) // --> Fin SWAL
-    }
-
-</script>
-
-<script type="text/javascript">
-
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            var titulo = $('#Titulo').val();
-
-            reader.onload = function (e) {
-                alert(e.target.text);
-                alert(e.target.result);
-                $('#profile-img-tag').attr('src', e.target.result);
-                $('#profile-img-tag').attr('alt', titulo);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    $("#profile-img").change(function () {
-        readURL(this);
-    });
-
-</script>
