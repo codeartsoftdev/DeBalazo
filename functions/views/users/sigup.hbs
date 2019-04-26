@@ -10,45 +10,48 @@
                         <div class="card-body">
                             <div class="row form-group">
                                 <div class="col-md-4">
-                                    <input type="text" name="nombreComercio" class="form-control" placeholder="NOMBRE DEL COMERCIO"
+                                    <input type="text" required name="nombreComercio" class="form-control" placeholder="NOMBRE DEL COMERCIO"
                                         autofocus>
                                 </div>
                                 <div class="col-md-4">
-                                    <select name="giroComercio" class="form-control">
-                                        <option selected="true" hidden disabled="disabled">GIRO DE LA EMPRESA</option>
+                                    <select name="giroComercio" required class="form-control">
+                                        <option selected="true" value="" hidden disabled>GIRO DE LA EMPRESA</option>
                                         {{#each giro}}
                                         <option value"{{this.key}}">{{this.value}}</option>
                                         {{/each}}
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" name="calle" class="form-control" placeholder="CALLE">
+                                    <input type="text" required name="calle" class="form-control" placeholder="CALLE">
                                 </div>
                             </div>
             
                             <div class="row form-group">
                                 <div class="col-md-4">
-                                    <input type="text" name="noExterior" class="form-control" placeholder="NO EXTERIOR">
+                                    <input type="text" required name="noExterior" class="form-control" placeholder="NO EXTERIOR">
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" name="noInterior" class="form-control" placeholder="NO INTERIOR">
+                                    <input type="text" required name="noInterior" class="form-control" placeholder="NO INTERIOR">
                                 </div>
-                                <div class="col-md-4">
-                                    <input type="text" id="cp" name="cp" class="form-control" placeholder="CODIGO POSTAL">
+                                <div class="col-md-2">
+                                    <input type="text" required id="telefono" maxlength="10" name="telefono" class="form-control" placeholder="CELULAR">
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" required id="cp" name="cp" maxlength="5" class="form-control" placeholder="CODIGO POSTAL">
                                 </div>
                             </div>
             
                             <div class="row form-group">
                                 <div class="col-md-4">
-                                    <select id="colonia" name="colonia" class="form-control">
-                                        <option selected="true" hidden disabled="disabled">COLONIA</option>
+                                    <select id="colonia" required name="colonia" class="form-control">
+                                        <option selected="true" value="" hidden disabled>COLONIA</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" id="ciudad" name="ciudad" class="form-control clear" placeholder="CIUDAD">
+                                    <input type="text" required id="ciudad" name="ciudad" disabled class="form-control clear" placeholder="CIUDAD">
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" id="estado" name="estado" class="form-control clear" placeholder="ESTADO">
+                                    <input type="text" required id="estado" name="estado" disabled class="form-control clear" placeholder="ESTADO">
                                 </div>
                             </div>
                         </div>
@@ -65,24 +68,24 @@
                         <div class="card-body">
                             <div class="row form-group">
                                 <div class="col-md-4">
-                                    <input type="text" name="nombre" class="form-control" placeholder="NOMBRE">
+                                    <input type="text" required name="nombre" class="form-control" placeholder="NOMBRE">
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" name="apPaterno" class="form-control" placeholder="APELLIDO PATERNO">
+                                    <input type="text" required name="apPaterno" class="form-control" placeholder="APELLIDO PATERNO">
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" name="apMaterno" class="form-control" placeholder="APELLIDO MATERNO">
+                                    <input type="text" required name="apMaterno" class="form-control" placeholder="APELLIDO MATERNO">
                                 </div>
                             </div>
                             <div class="row form-group">
                                 <div class="col-md-4">
-                                    <input type="text" name="email" class="form-control" placeholder="EMAIL">
+                                    <input type="email" required name="email" class="form-control" placeholder="EMAIL">
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" name="password" class="form-control" placeholder="PASSWORD">
+                                    <input type="text" required name="password" class="form-control" placeholder="PASSWORD">
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" name="passwordConfirm" class="form-control" placeholder="CONFIRMAR PASSWORD">
+                                    <input type="text" required name="passwordConfirm" class="form-control" placeholder="CONFIRMAR PASSWORD">
                                 </div>
                             </div>
                         </div>
@@ -94,7 +97,7 @@
     <div class="row">
         <div class="col-md-2 mx-auto mt-3 form-group">
             <button type="submit" class="btn btn-primary btn-block">
-                Iniciar
+                Registrarme
             </button>
         </div>
     </div>

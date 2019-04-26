@@ -11,7 +11,7 @@ router.get('/users/sigin', (req, res) => {
 });
 
 router.post('/users/sigin', passport.authenticate('local', {
-  successRedirect: '/Menu',
+  successRedirect: '/Menu/a',
   failureRedirect: '/users/sigin',
   failureFlash: true
 }));
@@ -57,20 +57,19 @@ router.get('/users/buscarColonias/:cp', (req,res) => {
      console.log('Error getting document', err);
      
    });
-
-    //res.json( getDoc.data ); 
-    //res.send(doc.data());
 });
 
-router.post('/users/sigup', (req, res) => {
-    const {nombre, apPaterno, apMaterno, email, password, confirmPassword} = req.body;
+router.post('/users/sigup', async(req, res) => {
+    const {nombre, apPaterno, apMaterno, email, password, confirmPassword, telefono} = req.body;
+
+
     if(password != confirmPassword){
-        req.flash('error_message', 'Las constraseñas no coinciden' + apMaterno + apPaterno); 
+        req.flash('error', 'Las constraseñas no coinciden' + apMaterno + apPaterno); 
     } else {
-        admin.auth().createUser({
+        await admin.auth().createUser({
             email: email,
             emailVerified: false,
-            phoneNumber: "+11234567890",
+            phoneNumber: telefono,
             password: password,
             displayName: nombre,
             disabled: false
@@ -80,7 +79,7 @@ router.post('/users/sigup', (req, res) => {
               res.send(userRecord);
             })
             .catch(function(error) {
-              res.send(error);
+              res.render('users/sigup', {error: 'Erro al registrarte'});
             });
     }
 });
