@@ -8,7 +8,7 @@ router.get('/menu/a', isAuthenticated, (req,res) => {
     res.render('Menu/AltaMenu', {user: user, nombre:nombre});
 });
 
-router.get('/menu/l', isAuthenticated, (req,res) => {
+router.get('/menu/l', isAuthenticated, (req,res ) => {
     var nombre = req.user.displayName;
     var user = req.user;
     res.render('Menu/ListaMenu', {user: user, nombre:nombre});
