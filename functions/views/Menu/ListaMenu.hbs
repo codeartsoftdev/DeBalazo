@@ -13,13 +13,14 @@
             <div class="form-group ">
 
 <div class="table-responsive">
-    <table class="table table-hover">
+    <table class="table table-hover" style="100%">
         <thead class="thead-light text-center">
             <tr>
                 <th>Foto/Imagen</th>
-                <th>Platillo/Bebida</th>
-                <th>Descrición</th>
-                <th colspan="4">Precio</th>
+                <th width="20%">Platillo/Bebida</th>
+                <th width="35%">Descripción</th>
+                <th colspan="4" width="20%">Precio</th>
+                <th width="5%"></th>
             </tr>
         </thead>
         <tbody>
@@ -27,30 +28,94 @@
                 <td>
                     <img id="Foto1" name="Foto1"
                         src="https://laroussecocina.mx/wp-content/uploads/2017/12/mole-poblano-001-larousse-cocina_0-1024x640.jpg"
-                        alt="imgAlt" style="display: block; margin-left: auto; margin-right: auto; width: 50%;" />
+                        alt="imgAlt" style="display: block; margin-left: auto; margin-right: auto; width: 167px; height: 100px;" />
                 </td>
                 <td class="text-center">Mole encacahuatado</td>
                 <td>Vas a dejar el plato limpio, después de probar esta deliciosa receta de pollo bañado en una salsa de cachuate, chiles secos y especias.</td>
-                <td>$50.00</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
+                <td class="text-center">$50.00</td>
+                <td class="text-center">-</td>
+                <td class="text-center">-</td>
+                <td class="text-center">-</td>
+
+                <td class="text-center">
+                    <i class="fa fa-pencil iEditar" style="color:darkorange;" data-toggle="tooltip" data-placement="left" title="Editar"></i>
+                    <i class="fa fa-times iEliminar" style="color:red;" data-toggle="tooltip" data-placement="left" title="Eliminar"></i>
+                </td>
+            </tr>
+            {{!-- <tr>
+                <td>
+                    <img id="Foto2" name="Foto2"
+                        src="https://naturopathicearth.com/wp-content/uploads/2018/06/40792838441_0bc0d5e318_b.jpg"
+                        alt="imgAlt" style="display: block; margin-left: auto; margin-right: auto; width: 167px; height: 100px;" />
+                </td>
+                <td class="text-center">Agua de horchata</td>
+                <td>El agua de horchata es una de las bebidas frescas más ricas para aplacar el calor del verano.</td>
+                <td class="text-center">-</td>
+                <td class="text-center">C $20.00</td>
+                <td class="text-center">M $30.00</td>
+                <td class="text-center">G $45.00</td>
+
+               <td class="text-center">
+                    <i class="fa fa-pencil iEditar" style="color:darkorange;" data-toggle="tooltip" data-placement="left" title="Editar"></i>
+                    <i class="fa fa-times iEliminar" style="color:red;" data-toggle="tooltip" data-placement="left" title="Eliminar"></i>
+                </td>
+            </tr> --}}
+            <tr>
+                <td>
+                    <img id="Foto3" name="Foto3"
+                        src="http://4.bp.blogspot.com/--wOxRWSEl1g/VjASu1oG_fI/AAAAAAAABXk/-UseLArAz_g/s1600/p19pozol_200_200.jpg"
+                        alt="imgAlt" style="display: block; margin-left: auto; margin-right: auto; width: 167px; height: 100px;" />
+                </td>
+                <td class="text-center">Pozol de cacao</td>
+                <td>Una de las bebidas más tradicionales de México, específicamente de Tabasco. A base de maíz, cacao molido, agua fría y otros ingredientes, para deleitar al paladar en los días más calurosos del año.</td>
+                <td class="text-center">-</td>
+                <td class="text-center">C $10.00</td>
+                <td class="text-center">M $15.00</td>
+                <td class="text-center">G $35.00</td>
+
+                <td class="text-center">
+                    <i class="fa fa-pencil iEditar" style="color:darkorange;" data-toggle="tooltip" data-placement="left" title="Editar"></i>
+                    <i class="fa fa-times iEliminar" style="color:red;" data-toggle="tooltip" data-placement="left" title="Eliminar"></i>
+                </td>
             </tr>
             <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
+                <td>
+                    <img id="Foto4" name="Foto4"
+                        src="https://www.cocinarygozar.com/wp-content/uploads/2018/12/frijol-con-puerco-cocinar-y-gozar.jpg"
+                        alt="imgAlt" style="display: block; margin-left: auto; margin-right: auto; width: 167px; height: 100px;" />
+                </td>
+                <td class="text-center">Frijol con puerco</td>
+                <td>Acompañado de deliciosas salsas y claro un buen chile habanero, es una delicia que no debe dejar de probar.</td>
+                <td class="text-center">$65.00</td>
+                <td class="text-center">-</td>
+                <td class="text-center">-</td>
+                <td class="text-center">-</td>
+
+                <td class="text-center">
+                    <i class="fa fa-pencil iEditar" style="color:darkorange;" data-toggle="tooltip" data-placement="left" title="Editar"></i>
+                    <i class="fa fa-times iEliminar" style="color:red;" data-toggle="tooltip" data-placement="left" title="Eliminar"></i>
+                </td>
             </tr>
-            <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-            </tr>
+
         </tbody>
     </table>
 </div>
 
-               
+               <div class="row">
+    <div class="col-md-4">
+    </div>
+
+    <div class="col-md-3">
+        <button type="button" class="btn btn-outline-dark btn-lg btn-block" id="btnAgregar" name="btnAgregar">
+            <span class="fa fa-plus">
+                Agregar nuevo
+            </span>
+        </button>
+    </div>
+
+    <div class="col-md-4">
+    </div>
+</div>
 
 
             </div>

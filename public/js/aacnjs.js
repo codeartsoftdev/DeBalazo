@@ -4,6 +4,13 @@ $(document).ready(function () {
 
   $('[data-toggle="tooltip"]').tooltip();
 
+  $('.iEditar').click(function () {
+    alert("En un futuro, E D I T A R É!");
+  });
+
+  $('.iEliminar').click(function () {
+    alert("En un futuro, E L I M I N A R É!");
+  });
 
   // ****** CAMBIAR IMAGEN DEBALAZO POR PLATILLO/BEBIDA ******
   function readURL(input) {
@@ -12,8 +19,8 @@ $(document).ready(function () {
       var titulo = $('#Titulo').val();
 
       reader.onload = function (e) {
-        alert(e.target.text);
-        alert(e.target.result);
+        // alert(e.target.text);
+        // alert(e.target.result);
         $('#profile-img-tag').attr('src', e.target.result);
         $('#profile-img-tag').attr('alt', titulo);
       }
