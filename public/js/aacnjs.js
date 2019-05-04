@@ -20,7 +20,7 @@ $(document).ready(function () {
 
       reader.onload = function (e) {
         // alert(e.target.text);
-        // alert(e.target.result);
+        alert(e.target.result);
         $('#profile-img-tag').attr('src', e.target.result);
         $('#profile-img-tag').attr('alt', titulo);
       }

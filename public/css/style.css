@@ -1,3 +1,16 @@
+body {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('/img/De-Balazo-Background.png');
+    background-repeat: repeat;
+    /* background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAATklEQVQoU2O0O3X+PwMDA8MhM0NGEI0LMBKtEJsJD27YgW1R0DgEtwWrdUQrxGYLY8V5iDUdhghrKFOITfenmXFgW/jSF+H3DNEKsdkCAO99IAvXcD3VAAAAAElFTkSuQmCC') repeat; */
+}
 
     input[type="file"] {
         display: none;
@@ -6,6 +19,45 @@
     .table>tbody>tr>td {
         vertical-align: middle;
         text-align: justify;
+    }
+
+    .MiddleJustify {
+        vertical-align: middle;
+        text-align: justify;
+    }
+
+    .heading-footer 
+    { 
+    background-image: url('/img/De-Balazo-Background-Card.png'); 
+    background-size: cover; 
+    height: 135px; 
+    -webkit-box-shadow: none; 
+    box-shadow: none; 
+    border: 0px; 
+    border-radius: 0px; 
+    }   
+    
+    .panel-profile-img 
+    { 
+    max-width: 200px; 
+    margin-top: -120px; 
+    margin-bottom: 5px; 
+    border: 3px solid #fff; 
+    border-radius: 0%; 
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75); 
+    }
+
+    .ImagenResponsiva {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+    .CardShadow {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        transition: all 0.4s cubic-bezier(.25,.8,.25,1);
     }
 
     .custom-file-upload {
@@ -64,15 +116,25 @@
         }
     }
 
-.dbbg::before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: url('/img/De-Balazo-Background.png');
-    background-repeat: repeat;
-}
+
+    .cortar{
+        width:191px;
+        /* height:20px;
+        padding:20px; */
+        /* border:1px solid blue; */
+        text-overflow:ellipsis;
+        white-space:nowrap; 
+        overflow:hidden;
+        -webkit-transition: all 1s;
+        -moz-transition: all 1s;
+        transition: all 1s;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .cortar:hover {
+        width: 100%;
+        white-space: initial;
+        overflow:visible;
+        cursor: pointer;
+      }
